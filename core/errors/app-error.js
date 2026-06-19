@@ -9,6 +9,10 @@ function appError(errorMessage, errorCode = 'ERR', options = {}) {
   error.isApplicationError = true;
   error.errorCode = errorCode;
 
+  if (options.businessCode) {
+    error.businessCode = options.businessCode;
+  }
+
   if (options.context) {
     error.context = options.context;
   }
